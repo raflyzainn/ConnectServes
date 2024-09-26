@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Styles/homepage.css">
+    <title>ConnectServes</title>
+
+    <style>
+        body {
+            font-family: 'Outfit';
+            background-image: linear-gradient(to bottom right, #4A90E2, #ffff);
+            background-repeat: no-repeat;
+            height: 3000px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px;
+        }
+
+        .logo {
+            margin-left: 100px;
+            color: #ffff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .menu h2 {
+            color: #ffff;
+            display: inline-block; 
+            margin-left: 30px; 
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .on {
+            font-weight: bolder;
+        }
+
+        .daftar {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .daftar h2 {
+            margin: 15px; 
+            color: #ffff;
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .daftar button {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            border-radius: 15px;
+            color: #ffff;
+            font-weight: bolder;
+            border: none;
+            background-color: #FF9500;
+            width: 125px;
+            font-size: 16px;
+            margin-left: 40px;
+            margin-right: 40px;
+            padding: 10px 10px;
+        }
+
+        .card1 {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: -150px;
+            padding-right: 100px;
+        }
+
+        .text-container {
+            display: flex; /* Flex container for vertical alignment */
+            flex-direction: column; /* Stack elements vertically */
+            align-items: flex-start; /* Align items to the start of the container */
+            margin-left: 115px; /* Set left margin for the entire container */
+            margin-top: 70px;
+        }
+
+        .text-container h2 {
+            font-size: 45px;
+            font-weight: 500;
+            color: #FF9500;
+            margin: 0; 
+        }
+
+        .text-container h1 {
+            font-size: 55px;
+            font-weight: 500;
+            color: #ffff;
+            margin: 0; 
+            text-shadow: 1px 1px 2px #000000;
+        }
+
+        .card1 h1 {
+            margin: 0; 
+        }
+
+        .card1img1 {
+            width: 700px; 
+            margin-left: 50px; 
+        }
+
+        .card1 p {
+            color: #ffff;
+            margin: 0;
+            font-weight: 300;
+        }
+
+        .text-container p {
+            color: #ffff;
+            margin-top: 20px; /* Remove default margin */
+            font-weight: 300;
+        }
+
+        .text-container button {
+            text-shadow: 1px 1px 1px #000000;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            border-radius: 15px;
+            color: #ffff;
+            font-weight: bolder;
+            border: none;
+            background-color: #FF9500;
+            margin-top: 40px;
+            width: 225px;
+            font-size: 16px;
+            padding: 25px 25px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <h2>BERANDA</h2>
+            <h2>LAYANAN</h2>
+            <h2>TENTANG KAMI</h2>
+            <h2>BANTUAN</h2>
+        </div>
+
+        <div class="daftar">
+            <h2 href="">DAFTAR</h2>
+            <button>MASUK</button>
+        </div>
+    </div>
+
+    <div class="card1">
+        <div class="text-container">
+            <h2>Halo! Selamat Datang</h2>
+            <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
+            <p> <strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
+            <button>Pesan Jasa</button>
+        </div>
+        <img src="{{ url_for('static', filename='illustration1.png') }}" class="card1img1">
+    </div>
+    
+    
+</body>
+</html>
