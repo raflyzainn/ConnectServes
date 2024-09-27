@@ -56,7 +56,11 @@
             font-weight: 300;
         }
 
-        .daftar button {
+        .daftar a {
+            text-decoration: none; 
+        }
+
+        .daftar .button {
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
             border-radius: 15px;
             color: #ffff;
@@ -68,21 +72,23 @@
             margin-left: 40px;
             margin-right: 40px;
             padding: 10px 10px;
+            display: inline-block; 
+            text-align: center;
         }
 
         .card1 {
             display: flex;
             justify-content: space-between; 
             align-items: center; 
-            margin-top: -150px;
+            margin-top: -30px;
             padding-right: 100px;
         }
 
         .text-container {
-            display: flex; /* Flex container for vertical alignment */
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the start of the container */
-            margin-left: 115px; /* Set left margin for the entire container */
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            margin-left: 115px; 
             margin-top: 70px;
         }
 
@@ -118,11 +124,11 @@
 
         .text-container p {
             color: #ffff;
-            margin-top: 20px; /* Remove default margin */
+            margin-top: 20px; 
             font-weight: 300;
         }
 
-        .text-container button {
+        .text-container .button {
             text-shadow: 1px 1px 1px #000000;
             box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
             border-radius: 15px;
@@ -134,9 +140,14 @@
             width: 225px;
             font-size: 16px;
             padding: 25px 25px;
+            display: inline-block; 
+            text-align: center;
         }
 
-
+        .daftar-tombol {
+            color: #ffff;
+            margin-right: 10px;
+        }
     </style>
 </head>
 <body>
@@ -151,8 +162,8 @@
         </div>
 
         <div class="daftar">
-            <h2 href="">DAFTAR</h2>
-            <button>MASUK</button>
+            <a href="daftar" class="daftar-tombol">DAFTAR</a>
+            <a href="masuk" class="button">MASUK</a>
         </div>
     </div>
 
@@ -160,12 +171,11 @@
         <div class="text-container">
             <h2>Halo! Selamat Datang</h2>
             <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
-            <p> <strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
-            <button>Pesan Jasa</button>
+            <p><strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
+            <a href="" class="button">Pesan Jasa</a>
         </div>
         <img src="{{ url_for('static', filename='illustration1.png') }}" class="card1img1">
     </div>
-    
     
 </body>
 </html>
