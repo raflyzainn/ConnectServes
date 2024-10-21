@@ -3,7 +3,7 @@ from Controllers.homepage import homepage_bp
 from Controllers.masuk import masuk_bp
 from Controllers.daftar import daftar_bp
 
-app = Flask(__name__, template_folder='Templates', static_folder='Images')
+app = Flask(__name__, template_folder='Templates', static_folder='Static')
 
 app.register_blueprint(homepage_bp)
 app.register_blueprint(masuk_bp)
