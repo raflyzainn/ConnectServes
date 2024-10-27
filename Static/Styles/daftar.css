@@ -1,0 +1,102 @@
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.kiri {
+    left: 0;
+    background-color: #ffff;
+}
+
+.kanan {
+    right: 0;
+    background-image: linear-gradient(to bottom right, #4A90E2, #ffff);
+}
+
+.text {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.text h1 {
+    font-size: 60px;
+    margin-bottom: 0px;
+}
+
+.text p {
+    margin-top: -30px;
+    display: inline; 
+    margin-bottom: 50px;
+}
+
+.text a {
+    display: inline; 
+    margin-left: 5px; 
+    margin-bottom: 50px;
+    text-decoration: none; 
+    color: #FF9500; 
+    text-shadow: 1px   #000000;
+}
+
+.textbox {
+    width: 450px;
+    padding: 20px 20px;
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+    margin-top: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+}
+
+.button-daftar {
+    width: 325px;
+    font-weight: 650;
+    font-family: 'Outfit'; 
+    padding: 15px; 
+    margin-top: 40px;
+    border: none;
+    background-color: #4A90E2;
+    color: #ffff;
+    font-size: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-shadow: 1px 1px 1px #000000;
+    margin-left: 60px;
+    margin-bottom: 100px;
+}
+
+.labelemail {
+    margin-top: 25px; 
+    font-weight: 600;
+}
+
+.labelpassword {
+    font-weight: 600;
+}
+
+.display {
+    margin-bottom: 30px;
+}
+
+.button-pilih{
+    display: inline;
+    width: 238px;
+    color: #FF9500;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 15px;
+    font-size: 17px;
+    background-color: #ffff;
+    padding: 15px; 
+    font-family: 'Outfit'; 
+    border: none;
+    margin-top: 15px;
+}
