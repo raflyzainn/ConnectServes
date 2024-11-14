@@ -18,35 +18,35 @@
                 <a href="daftar">Daftar</a> <br>
             </div>
 
-            <label class="labelemail">Nama</label><br>
-            <input type="email" id="email" class="textbox" placeholder="Isi nama kamu" required><br>
+            <form method="POST" action="{{ url_for('daftar.daftar') }}">
+                <label for="nama" class="labelemail">Nama</label><br>
+                <input type="text" id="nama" name="nama" class="textbox" placeholder="Isi nama kamu" required><br>
+                
+                <label for="email" class="labelemail">Email</label><br>
+                <input type="email" id="email" name="email" class="textbox" placeholder="Masukkan email kamu" required><br>
             
-            <label for="email" class="labelemail">Email</label><br>
-            <input type="email" id="email" class="textbox" placeholder="Masukkan email kamu" required><br>
-        
-            <label for="password" class="labelpassword">Kata Sandi</label><br>
-            <input type="password" id="password" class="textbox" placeholder="Masukkan 6 karakter atau lebih" required><br>
+                <label for="password" class="labelpassword">Kata Sandi</label><br>
+                <input type="password" id="password" name="password" class="textbox" placeholder="Masukkan 6 karakter atau lebih" required><br>
 
-            <label class="labelpassword">Nomor HP</label><br>
-            <input type="password" id="password" class="textbox" placeholder="Masukkan nomor kamu" required><br>
+                <label for="nomorhp" class="labelpassword">Nomor HP</label><br>
+                <input type="text" id="nomorhp" name="nomorhp" class="textbox" placeholder="Masukkan nomor kamu" required><br>
 
-            <label class="labelpassword">Peran Pengguna</label><br>
+                <label class="labelpassword">Peran Pengguna</label><br>
 
-            <div class="button-role">
-                <a href="">
-                    <button class="button-pilih">Pelanggan</button>
-                </a>
-                <a href="">
-                    <button class="button-pilih">Penyedia Jasa</button>
-                </a>
-            </div>
-            
-            <a href="/">
-                <button class="button-daftar">Daftar</button>
-            </a>
+                <div class="button-role">
+                    <input type="radio" id="pelanggan" name="peran" value="pelanggan" required>
+                    <label for="pelanggan">Pelanggan</label>
+                    
+                    <input type="radio" id="penyedia" name="peran" value="penyedia">
+                    <label for="penyedia">Penyedia Jasa</label>
+                </div>
+                
+                <button type="submit" class="button-daftar">Daftar</button>
+            </form>
         </div>
     </div>
 
     <div class="split kanan">
+    </div>
 </body>
 </html>

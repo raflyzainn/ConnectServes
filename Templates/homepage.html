@@ -45,8 +45,25 @@
     </div>
     
     <div class="card2">
-        <h2>Layanan Kami</h2>
-        <h3>Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
+        <h2 class="section-title">Layanan Kami</h2>
+        <h3 class="section-subtitle">Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
+        <div class="service-cards">
+            <div class="service-card">
+                <img src="{{ url_for('static', filename='/Images/rumah.png') }}" alt="Household Icon">
+                <h3>Household</h3>
+                <p>Penyedia jasa perbaikan rumah, kebersihan, renovasi, dan layanan pindahan, membantu menjaga rumah dan lingkungan tetap nyaman dan terawat.</p>
+            </div>
+            <div class="service-card">
+                <img src="{{ url_for('static', filename='/Images/device.png') }}" alt="Tech Icon">
+                <h3>Teknologi & IT</h3>
+                <p>Ahli perbaikan elektronik, pengembang situs web, dan layanan dukungan IT tersedia untuk membantu mengatasi masalah teknologi dan mengembangkan solusi digital.</p>
+            </div>
+            <div class="service-card">
+                <img src="{{ url_for('static', filename='/Images/beauty.png') }}" alt="Beauty Icon">
+                <h3>Beauty & Health</h3>
+                <p>Temukan jasa salon, spa, personal trainer, hingga konsultasi kesehatan dan terapi online, semua untuk menjaga tubuh dan pikiran tetap sehat dan bugar.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

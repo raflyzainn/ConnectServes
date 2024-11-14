@@ -4,11 +4,10 @@ from mysql.connector import Error
 
 daftar_bp = Blueprint('daftar', __name__)
 
-# Database configuration
 db_config = {
     'host': 'localhost',
-    'user': 'root',  # default XAMPP username
-    'password': '',  # default XAMPP password
+    'user': 'root',  
+    'password': '',  
     'database': 'tubes_ippl'
 }
 
@@ -28,15 +27,13 @@ def daftar():
         email = request.form['email']
         password = request.form['password']
         nomorhp = request.form['nomorhp']
-        peran = 1 if request.form['peran'] == 'pelanggan' else 0  # 1 for pelanggan, 0 for penyedia jasa
+        peran = 1 if request.form['peran'] == 'pelanggan' else 0  
 
-        # Create database connection
         connection = create_db_connection()
         if connection:
             try:
                 cursor = connection.cursor()
                 
-                # Insert query
                 query = """
                 INSERT INTO registrasi_akun 
                 (nama_akun, email_akun, sandi_akun, nomorhp_akun, peran_pengguna) 
@@ -47,16 +44,13 @@ def daftar():
                 cursor.execute(query, values)
                 connection.commit()
                 
-                # Close connection
                 cursor.close()
                 connection.close()
                 
-                # Redirect to success page or login page
-                return redirect(url_for('login'))  # Adjust this to your login route
+                return redirect(url_for('homepage.homepage'))  
                 
             except Error as e:
                 print(f"Error: {e}")
-                # Handle error appropriately
                 return "Registration failed. Please try again."
                 
     return render_template("daftar.html")
