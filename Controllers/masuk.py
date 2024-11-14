@@ -4,11 +4,11 @@ from mysql.connector import Error
 
 masuk_bp = Blueprint('masuk', __name__)
 
-# Database configuration
+# Konfigurasi database
 db_config = {
     'host': 'localhost',
     'user': 'root',  
-    'password': '', 
+    'password': '',  
     'database': 'tubes_ippl'
 }
 
@@ -31,9 +31,10 @@ def masuk():
             try:
                 cursor = connection.cursor(dictionary=True)
                 
+                # Sesuaikan query dengan tabel pengguna
                 query = """
-                SELECT * FROM registrasi_akun 
-                WHERE email_akun = %s AND sandi_akun = %s
+                SELECT * FROM pengguna 
+                WHERE email = %s AND kata_sandi = %s
                 """
                 cursor.execute(query, (email, password))
                 user = cursor.fetchone()
@@ -42,15 +43,17 @@ def masuk():
                 connection.close()
                 
                 if user:
+                    # Set session data
                     session['logged_in'] = True
-                    session['user_email'] = user['email_akun']
-                    session['user_name'] = user['nama_akun']
+                    session['user_email'] = user['email']
+                    session['user_name'] = user['nama']
                     session['user_role'] = user['peran_pengguna']
                     
+                    # Redirect berdasarkan peran pengguna
                     if user['peran_pengguna'] == 1:
-                        return redirect(url_for('homepage_customer.homepage_customer'))  
+                        return redirect(url_for('homepage_merchant.homepage_merchant'))  
                     else:
-                        return redirect(url_for('penyedia_dashboard'))  
+                        return redirect(url_for('homepage_customer.homepage_customer'))  
                 else:
                     flash('Email atau kata sandi salah. Silakan coba lagi.', 'error')
                     return redirect(url_for('masuk.masuk'))

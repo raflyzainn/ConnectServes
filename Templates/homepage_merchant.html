@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/homepage_customer.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="">
+                <h2>JASA</h2>
+            </a>
+            <a href="">
+                <h2>PESANAN</h2>
+            </a>
+            <a href="">
+                <h2>BANTUAN</h2>
+            </a>
+        </div>
+
+        <div class="daftar">
+            <a href="{{ url_for('keluar.keluar') }}" class="daftar-tombol">KELUAR</a>
+            <a href="" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <div class="card1">
+        <div class="text-container">
+            <h2>Halo! Selamat Datang</h2>
+            <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
+            <p><strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
+            <a href="" class="button">Pesan Jasa</a>
+        </div>
+        <img src="{{ url_for('static', filename='/Images/illustration1.png') }}" class="card1img1">
+    </div>
+    
+    <div class="card2">
+        <h2>Layanan Kami</h2>
+        <h3>Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
+    </div>
+</body>
+</html>

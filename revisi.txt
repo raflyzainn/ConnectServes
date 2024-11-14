@@ -1,0 +1,227 @@
+daftar.py : 
+from flask import Blueprint, render_template, request, redirect, url_for, flash
+import mysql.connector
+from mysql.connector import Error
+
+daftar_bp = Blueprint('daftar', __name__)
+
+# Konfigurasi database
+db_config = {
+    'host': 'localhost',
+    'user': 'root',  
+    'password': '',  
+    'database': 'tubes_ippl'
+}
+
+def create_db_connection():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        return connection
+    except Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        return None
+
+@daftar_bp.route('/daftar', methods=['GET', 'POST'])
+def daftar():
+    if request.method == 'POST':
+        # Ambil data dari form
+        nama = request.form['nama']
+        email = request.form['email']
+        password = request.form['password']
+        nomorhp = request.form['nomorhp']
+        peran = 1 if request.form['peran'] == 'pelanggan' else 0  
+        ava_pengguna = request.form.get('ava_pengguna', None)  # Optional, bisa diisi jika ada gambar profil
+
+        # Buat koneksi database
+        connection = create_db_connection()
+        if connection:
+            try:
+                cursor = connection.cursor()
+                
+                # Query untuk memasukkan data pengguna
+                query = """
+                INSERT INTO pengguna
+                (email, no_hp, nama, kata_sandi, peran_pengguna, ava_pengguna) 
+                VALUES (%s, %s, %s, %s, %s, %s)
+                """
+                values = (email, nomorhp, nama, password, peran, ava_pengguna)
+                
+                cursor.execute(query, values)
+                connection.commit()
+                
+                # Tutup koneksi
+                cursor.close()
+                connection.close()
+                
+                flash("Registration successful!", "success")
+                return redirect(url_for('homepage.homepage'))  
+                
+            except Error as e:
+                print(f"Error: {e}")
+                flash("Registration failed. Please try again.", "danger")
+                return redirect(url_for('daftar.daftar'))
+        else:
+            flash("Database connection failed.", "danger")
+            return redirect(url_for('daftar.daftar'))
+                
+    return render_template("daftar.html")
+
+masuk.py : 
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+import mysql.connector
+from mysql.connector import Error
+
+masuk_bp = Blueprint('masuk', __name__)
+
+# Konfigurasi database
+db_config = {
+    'host': 'localhost',
+    'user': 'root',  
+    'password': '',  
+    'database': 'tubes_ippl'
+}
+
+def create_db_connection():
+    try:
+        connection = mysql.connector.connect(**db_config)
+        return connection
+    except Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        return None
+
+@masuk_bp.route('/masuk', methods=['GET', 'POST'])
+def masuk():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+        
+        connection = create_db_connection()
+        if connection:
+            try:
+                cursor = connection.cursor(dictionary=True)
+                
+                # Sesuaikan query dengan tabel pengguna
+                query = """
+                SELECT * FROM pengguna 
+                WHERE email = %s AND kata_sandi = %s
+                """
+                cursor.execute(query, (email, password))
+                user = cursor.fetchone()
+                
+                cursor.close()
+                connection.close()
+                
+                if user:
+                    # Set session data
+                    session['logged_in'] = True
+                    session['user_email'] = user['email']
+                    session['user_name'] = user['nama']
+                    session['user_role'] = user['peran_pengguna']
+                    
+                    # Redirect berdasarkan peran pengguna
+                    if user['peran_pengguna'] == 1:
+                        return redirect(url_for('homepage_merchant.homepage_merchant'))  
+                    else:
+                        return redirect(url_for('homepage_customer.homepage_customer'))  
+                else:
+                    flash('Email atau kata sandi salah. Silakan coba lagi.', 'error')
+                    return redirect(url_for('masuk.masuk'))
+                    
+            except Error as e:
+                print(f"Error: {e}")
+                flash('Terjadi kesalahan. Silakan coba lagi.', 'error')
+                return redirect(url_for('masuk.masuk'))
+    
+    return render_template("masuk.html")
+
+homepage_merchant.py : 
+from flask import Blueprint, render_template
+
+homepage_merchant_bp = Blueprint('homepage_merchant', __name__)
+
+@homepage_merchant_bp.route('/homepage-merchant')
+def homepage_merchant():
+    return render_template("homepage_merchant.html")
+
+homepage_merchant.html : 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/homepage_customer.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="">
+                <h2>JASA</h2>
+            </a>
+            <a href="">
+                <h2>PESANAN</h2>
+            </a>
+            <a href="">
+                <h2>BANTUAN</h2>
+            </a>
+        </div>
+
+        <div class="daftar">
+            <a href="{{ url_for('keluar.keluar') }}" class="daftar-tombol">KELUAR</a>
+            <a href="" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <div class="card1">
+        <div class="text-container">
+            <h2>Halo! Selamat Datang</h2>
+            <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
+            <p><strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
+            <a href="" class="button">Pesan Jasa</a>
+        </div>
+        <img src="{{ url_for('static', filename='/Images/illustration1.png') }}" class="card1img1">
+    </div>
+    
+    <div class="card2">
+        <h2>Layanan Kami</h2>
+        <h3>Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
+    </div>
+</body>
+</html>
+
+app.py : 
+from flask import Flask
+from flask_session import Session
+from Controllers.homepage import homepage_bp
+from Controllers.masuk import masuk_bp
+from Controllers.daftar import daftar_bp
+from Controllers.homepage_customer import homepage_customer_bp
+from Controllers.keluar import keluar_bp  # Add this import
+from Controllers.homepage_merchant import homepage_merchant_bp
+
+# Initialize Flask app
+app = Flask(__name__, template_folder='Templates', static_folder='Static')
+
+# Session configuration
+app.config['SECRET_KEY'] = 'c053d6febe5e4db670ce9c18762de227'
+app.config['SESSION_TYPE'] = 'filesystem'
+Session(app)
+
+# Register blueprints
+app.register_blueprint(homepage_bp)
+app.register_blueprint(masuk_bp)
+app.register_blueprint(daftar_bp)
+app.register_blueprint(homepage_customer_bp)
+app.register_blueprint(keluar_bp)  # Register the logout blueprint
+app.register_blueprint(homepage_merchant_bp)
+
+if __name__ == '__main__':
+    app.run(debug=True)
