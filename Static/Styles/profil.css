@@ -1,0 +1,152 @@
+body {
+    background-image: linear-gradient(to bottom right, #4A90E2, #ffff);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    padding: 51px 80px 110px;
+}
+
+@media (max-width: 991px) {
+    .profile-container {
+        padding: 0 20px 100px;
+    }
+}
+
+/* Content wrapper */
+.content-wrapper {
+    display: flex;
+    margin-left: 24px;
+    width: 100%;
+    max-width: 1227px;
+    flex-direction: column;
+    align-items: start;
+}
+
+@media (max-width: 991px) {
+    .content-wrapper {
+        max-width: 100%;
+    }
+}
+
+/* Header */
+.header {
+    align-self: stretch;
+    display: flex;
+    width: 100%;
+    gap: 20px;
+    color: #fff;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font: 700 16px Outfit, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .header {
+        max-width: 100%;
+    }
+}
+
+/* Logo container */
+.logo-container {
+    align-self: start;
+    display: flex;
+    gap: 14px;
+    font-size: 20px;
+}
+
+.logo-icon {
+    background-color: #ff9500;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.logo-text {
+    margin: auto 0;
+}
+
+/* Navigation menu */
+.nav-menu {
+    display: flex;
+    gap: 35px;
+    font-weight: 400;
+    margin: auto 0;
+}
+
+/* Profile button */
+.profile-button-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-button {
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    background-color: #ff9500;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+    padding: 10px 38px;
+}
+
+@media (max-width: 991px) {
+    .profile-button {
+        margin-right: 2px;
+        padding: 0 20px;
+    }
+}
+
+.profile-icon {
+    aspect-ratio: 45.45;
+    object-fit: contain;
+    object-position: center;
+    width: 136px;
+    margin-top: 8px;
+}
+
+/* Main content */
+.main-content {
+    width: 1036px;
+    max-width: 100%;
+    margin: 54px 0 0 44px;
+}
+
+@media (max-width: 991px) {
+    .main-content {
+        margin-top: 40px;
+    }
+}
+
+/* Profile info */
+.profile-info {
+    gap: 20px;
+    display: flex;
+}
+
+@media (max-width: 991px) {
+    .profile-info {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+}
+
+/* Add other styles here */
+
+/* Footer styles */
+/* Ensure to include footer-related styles as well */
+
+/* Visually hidden utility */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

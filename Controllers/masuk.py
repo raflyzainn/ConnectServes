@@ -49,11 +49,16 @@ def masuk():
                     session['user_name'] = user['nama']
                     session['user_role'] = user['peran_pengguna']
                     
+                    # Debug: Print peran_pengguna ke console
+                    print("Peran Pengguna:", user['peran_pengguna'])
+
                     # Redirect berdasarkan peran pengguna
-                    if user['peran_pengguna'] == 1:
-                        return redirect(url_for('homepage_merchant.homepage_merchant'))  
-                    else:
+                    if user['peran_pengguna'] == 0:
+                        print("Redirecting to homepage_merchant")  # Debug statement
                         return redirect(url_for('homepage_customer.homepage_customer'))  
+                    else:
+                        print("Redirecting to homepage_customer")  # Debug statement
+                        return redirect(url_for('homepage_merchant.homepage_merchant'))  
                 else:
                     flash('Email atau kata sandi salah. Silakan coba lagi.', 'error')
                     return redirect(url_for('masuk.masuk'))

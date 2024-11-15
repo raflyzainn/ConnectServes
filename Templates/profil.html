@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/profil.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+<section class="profile-container">
+    <div class="content-wrapper">
+        <header class="header">
+            <div class="logo-container">
+                <div class="logo-icon" aria-hidden="true"></div>
+                <div class="logo-text">ConnectServes</div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-link">BERANDA</a>
+                <a href="#" class="nav-link">JASA</a>
+                <a href="#" class="nav-link">PESANAN</a>
+                <a href="#" class="nav-link">BANTUAN</a>
+            </nav>
+            <div class="profile-button-container">
+                <button class="profile-button">PROFIL</button>
+                <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Profile icon" class="profile-icon" />
+            </div>
+        </header>
+        <main class="main-content">
+            <div class="profile-info">
+                <div class="profile-image-column">
+                    <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Profile picture" class="profile-image" />
+                </div>
+                <div class="profile-details-column">
+                    <div class="profile-details">
+                        <div class="profile-header">
+                            <div class="profile-title">
+                                <h1 class="profile-heading">Profil</h1>
+                                <label for="name-input" class="name-label">Nama</label>
+                            </div>
+                            <div class="verification-badge">Verifikasi Pedagang</div>
+                        </div>
+                        <div class="name-input">
+                            <span class="name-text">Anna Kim</span>
+                            <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Edit name" class="edit-icon" />
+                        </div>
+                        <label for="phone-input" class="phone-label">No HP</label>
+                        <div class="phone-input">
+                            <span class="phone-text">08xxxxxxxxxx</span>
+                            <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Edit phone number" class="edit-icon" />
+                        </div>
+                        <label for="user-role-input" class="user-role-label">Peran Pengguna</label>
+                        <input type="text" id="user-role-input" class="user-role-input" value="Penyedia Jasa" readonly />
+                        <button class="save-button">Simpan</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer-content">
+                <!-- Footer content goes here -->
+            </div>
+        </footer>
+    </div>
+</section>
+    </body>
+    </html>
