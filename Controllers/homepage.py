@@ -1,24 +1,38 @@
 from flask import Blueprint, render_template
+import mysql.connector
+from mysql.connector import Error
 
 homepage_bp = Blueprint('homepage', __name__)
 
-@homepage_bp.route('/')  
+def get_database_connection():
+    try:
+        connection = mysql.connector.connect(
+            host='localhost',
+            database='tubes_ippl',
+            user='root',
+            password=''
+        )
+        return connection
+    except Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        return None
+
+@homepage_bp.route('/')
 @homepage_bp.route('/homepage')
 def homepage():
-    return render_template("homepage.html")
-
-from flask import Blueprint, render_template, request, session, redirect, url_for
-
-masuk_bp = Blueprint('masuk', __name__)
-
-@masuk_bp.route('/masuk', methods=['GET', 'POST'])
-def masuk():
-    return render_template("masuk.html")
-
-from flask import Blueprint, render_template, request
-
-daftar_bp = Blueprint('daftar', __name__)
-
-@daftar_bp.route('/daftar', methods=['GET', 'POST'])
-def daftar():
-    return render_template("daftar.html")
+    connection = get_database_connection()
+    services = []
+    
+    if connection:
+        try:
+            cursor = connection.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM daftarjasa_merch")
+            services = cursor.fetchall()
+        except Error as e:
+            print(f"Error: {e}")
+        finally:
+            if connection.is_connected():
+                cursor.close()
+                connection.close()
+    
+    return render_template("homepage.html", services=services)
