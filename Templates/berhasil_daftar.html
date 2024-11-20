@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/daftar.css') }}">
+    <style>
+       
+    </style>
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="split kiri">
+        <div class="text">
+            <div class="display">
+                <h1>Buat akun kamu</h1>
+                <p>Belum punya akun?</p> 
+                <a href="daftar">Daftar</a> <br>
+            </div>
+            <form method="POST" action="{{ url_for('daftar.daftar') }}">
+                <label for="nama" class="labelemail">Nama</label><br>
+                <input type="text" id="nama" name="nama" class="textbox" placeholder="Isi nama kamu" required><br>
+                
+                <label for="email" class="labelemail">Email</label><br>
+                <input type="email" id="email" name="email" class="textbox" placeholder="Masukkan email kamu" required><br>
+            
+                <label for="password" class="labelpassword">Kata Sandi</label><br>
+                <input type="password" id="password" name="password" class="textbox" placeholder="Masukkan 6 karakter atau lebih" required><br>
+                <label for="nomorhp" class="labelpassword">Nomor HP</label><br>
+                <input type="text" id="nomorhp" name="nomorhp" class="textbox" placeholder="Masukkan nomor kamu" required><br>
+                <label class="labelpassword">Peran Pengguna</label><br>
+                <div class="button-role">
+                    <input type="radio" id="pelanggan" name="peran" value="pelanggan" required>
+                    <label for="pelanggan">Pelanggan</label>
+                    
+                    <input type="radio" id="penyedia" name="peran" value="penyedia">
+                    <label for="penyedia">Penyedia Jasa</label>
+                </div>
+                
+                <button type="submit" class="button-daftar">Daftar</button>
+            </form>
+        </div>
+    </div>
+    <div class="split kanan">
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-icon">
+                <div class="checkmark">✓</div>
+            </div>
+            <h2 class="modal-title">Akun berhasil didaftarkan</h2>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Auto-redirect after successful registration
+        setTimeout(function() {
+            window.location.href = "{{ url_for('login') }}"; // Adjust the route as needed
+        }, 2000);
+    </script>
+</body>
+</html>

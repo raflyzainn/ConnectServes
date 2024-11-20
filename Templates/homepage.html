@@ -14,19 +14,20 @@
         <h2 class="logo">ConnectServes</h2>
 
         <div class="menu">
-            <a href="">
+            <a href="#beranda">
                 <h2>BERANDA</h2>
             </a>
-            <a href="">
+            <a href="#layanan">
                 <h2>LAYANAN</h2>
             </a>
-            <a href="">
+            <a href="#tentang-kami">
                 <h2>TENTANG KAMI</h2>
             </a>
-            <a href="">
+            <a href="#bantuan">
                 <h2>BANTUAN</h2>
             </a>
         </div>
+        
 
         <div class="daftar">
             <a href="daftar" class="daftar-tombol">DAFTAR</a>
@@ -34,7 +35,7 @@
         </div>
     </div>
 
-    <div class="card1">
+    <div id="beranda" class="card1">
         <div class="text-container">
             <h2>Halo! Selamat Datang</h2>
             <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
@@ -44,7 +45,7 @@
         <img src="{{ url_for('static', filename='/Images/illustration1.png') }}" class="card1img1">
     </div>
     
-    <div class="card2">
+    <div id="layanan" class="card2">
         <h2 class="section-title">Layanan Kami</h2>
         <h3 class="section-subtitle">Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
         <div class="service-cards">
@@ -66,7 +67,7 @@
         </div>
     </div>
 
-    <div class="card3">
+    <div id="tentang-kami" class="card3">
         <h2>Temukan Jasa</h2>
         <p>Temukan dan hubungkan dengan penyedia jasa terpecaya di berbagai bidang.</p>
         <p>ConnectServe menawarkan solusi cepat dan mudah untuk setiap kebutuhan anda</p>
@@ -148,7 +149,7 @@
         </section>    
     </div>
 
-    <div class="card5">
+    <div id="bantuan" class="card5">
         <img src="{{ url_for('static', filename='/Images/card5.png') }}">
     </div>
 
