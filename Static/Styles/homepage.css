@@ -334,7 +334,7 @@ body {
 .section-title {
     text-align: center;
     color: #FF8C00;
-    font-size: 32px;
+    font-size: 50px;
     margin-bottom: 40px;
     font-weight: bold;
 }
@@ -352,6 +352,7 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    margin-bottom: 75px;
 }
 
 .service-card:hover {
@@ -407,7 +408,6 @@ body {
 
 .feature {
     display: flex;
-    align-items: center;
     gap: 4px;
 }
 

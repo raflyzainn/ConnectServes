@@ -27,7 +27,20 @@ def homepage():
         try:
             cursor = connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM daftarjasa_merch")
-            services = cursor.fetchall()
+            rows = cursor.fetchall()
+            for row in rows:
+                service = {
+                    'id_jasa': int(row.get('id_jasa', 0)),
+                    'id_merch': int(row.get('id_merch', 0)),
+                    'nama': row.get('nama', ''),
+                    'kategori': row.get('kategori', ''),
+                    'harga': float(row.get('harga', 0.0)),
+                    'lokasi': row.get('lokasi', ''),
+                    'foto_jasa': row.get('foto_jasa', ''),
+                    'deskripsi': row.get('deskripsi', ''),
+                    'id_review': int(row.get('id_review', 0))
+                }
+                services.append(service)
         except Error as e:
             print(f"Error: {e}")
         finally:

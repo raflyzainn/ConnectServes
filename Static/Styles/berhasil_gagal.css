@@ -138,7 +138,6 @@ body {
 .checkmark {
     color: white;
     font-size: 36px;
-    transform: rotate(45deg);
 }
 
 .modal-title {

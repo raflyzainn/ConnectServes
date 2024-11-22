@@ -53,12 +53,11 @@ def daftar():
                 connection.close()
                 
                 flash("Registration successful!", "success")
-                return redirect(url_for('homepage.homepage'))  
-                
+                return redirect(url_for('berhasil_daftar.berhasil_daftar'))                
             except Error as e:
                 print(f"Error: {e}")
                 flash("Registration failed. Please try again.", "danger")
-                return redirect(url_for('daftar.daftar'))
+                return redirect(url_for('gagal_daftar.gagal_daftar'))
         else:
             flash("Database connection failed.", "danger")
             return redirect(url_for('daftar.daftar'))

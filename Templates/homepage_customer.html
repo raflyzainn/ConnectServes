@@ -48,5 +48,142 @@
         <h2>Layanan Kami</h2>
         <h3>Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
     </div>
+
+    <div id="tentang-kami" class="card3">
+        <h2>Temukan Jasa</h2>
+        <p>Temukan dan hubungkan dengan penyedia jasa terpecaya di berbagai bidang.</p>
+        <p>ConnectServe menawarkan solusi cepat dan mudah untuk setiap kebutuhan anda</p>
+
+        <div class="search-container">
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                    </svg>
+                    <input type="text" class="search-input" placeholder="Cari layanan yang Anda butuhkan">
+                </div>
+    
+                <div class="dropdown-wrapper" onclick="toggleDropdown('categoryDropdown')">
+                    <span>Kategori</span>
+                    <i class="chevron-down"></i>
+                    <div id="categoryDropdown" class="dropdown-content">
+                        <a href="#">Kategori 1</a>
+                        <a href="#">Kategori 2</a>
+                        <a href="#">Kategori 3</a>
+                    </div>
+                </div>
+    
+                <div class="dropdown-wrapper" onclick="toggleDropdown('locationDropdown')">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                        <circle cx="12" cy="9" r="2.5"/>
+                    </svg>
+                    <span>Lokasi</span>
+                    <i class="chevron-down"></i>
+                    <div id="locationDropdown" class="dropdown-content">
+                        <a href="#">Jakarta</a>
+                        <a href="#">Surabaya</a>
+                        <a href="#">Bandung</a>
+                    </div>
+                </div>
+    
+                <button class="search-button">CARI</button>
+            </div>
+        </div>
+
+        <img src="{{ url_for('static', filename='/Images/illustration2.png') }}" class="card3img1">
+    </div>
+
+    <div class="card4">
+        <section class="rekomendasi-section">
+            <h2 class="section-title">Rekomendasi Jasa</h2>
+            
+            <div class="services-grid">
+                {% for service in services %}
+                <div class="service-card">
+                    <img src="{{ service.foto_jasa }}" alt="{{ service.nama }}" class="service-image">
+                    <div class="service-content">
+                        <h3 class="service-title">{{ service.nama }}</h3>
+                        <div class="service-price">{{ service.harga }}</div>
+                        <div class="service-type">{{ service.kategori }}</div>
+                        <div class="service-location">{{ service.lokasi }}</div>
+                        <div class="service-description">{{ service.deskripsi }}</div>
+                        {% if service.id_review %}
+                        <div class="star-rating">
+                            {% for _ in range(service.id_review) %}★{% endfor %}
+                        </div>
+                        {% endif %}
+                        <div class="service-features">
+                            <div class="feature">
+                                <img src="{{ url_for('static', filename='/Images/location.png') }}" alt="Location">
+                                <span>Location</span>
+                            </div>
+                            <div class="feature">
+                                <img src="{{ url_for('static', filename='Images/souvenir.png') }}" alt="Souvenir">
+                                <span>Souvenir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>    
+    </div>
+
+    <div id="bantuan" class="card5">
+        <img src="{{ url_for('static', filename='/Images/card5.png') }}">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <div class="logo-circle"></div>
+                    <span class="brand-name">ConnectServes</span>
+                </div>
+                <p class="brand-description">
+                    ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                </p>
+                <div class="copyright">
+                    © ConnectServes2024
+                </div>
+            </div>
+
+            <!-- Perusahaan Section -->
+            <div class="footer-section">
+                <h3>Perusahaan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Panduan Layanan</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+            </div>
+
+            <!-- Kota Section -->
+            <div class="footer-section">
+                <h3>Kota</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                </ul>
+            </div>
+
+            <!-- Bantuan Section -->
+            <div class="footer-section">
+                <h3>Bantuan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Hubungi Admin</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
