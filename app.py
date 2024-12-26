@@ -10,6 +10,10 @@ from Controllers.profil import profil_bp
 from Controllers.berhasil_daftar import berhasil_daftar_bp
 from Controllers.gagal_daftar import gagal_daftar_bp
 from Controllers.berhasil_masuk import berhasil_masuk_bp
+from Controllers.detail_jasa import detail_jasa_bp
+from Controllers.pesan_jasa import pesan_jasa_bp
+from Controllers.konfirmasi_pesan import konfirmasi_pesan_bp
+from Controllers.berhasil_pesan import berhasil_pesan_bp
 
 # Initialize Flask app
 app = Flask(__name__, template_folder='Templates', static_folder='Static')
@@ -30,6 +34,10 @@ app.register_blueprint(profil_bp)
 app.register_blueprint(berhasil_daftar_bp)
 app.register_blueprint(gagal_daftar_bp)
 app.register_blueprint(berhasil_masuk_bp)
+app.register_blueprint(detail_jasa_bp)
+app.register_blueprint(pesan_jasa_bp)
+app.register_blueprint(konfirmasi_pesan_bp)
+app.register_blueprint(berhasil_pesan_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)

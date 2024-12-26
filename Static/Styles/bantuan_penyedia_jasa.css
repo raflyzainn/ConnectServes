@@ -1,0 +1,237 @@
+body {
+    font-family: 'Outfit', sans-serif;
+    background-image: linear-gradient(to bottom right, #4A90E2, #ffff);
+    background-repeat: no-repeat;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px;
+}
+
+.logo {
+    margin-left: 100px;
+    color: #ffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.menu a{
+    text-decoration: none;
+}
+
+.menu h2 {
+    color: #ffff;
+    display: inline-block; 
+    margin-left: 30px; 
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.menu h3 {
+    color: #ffff;
+    display: inline-block; 
+    margin-left: 30px; 
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+
+.profil {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.profil a {
+    text-decoration: none; 
+}
+
+.profil .button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 15px;
+    color: #ffff;
+    font-weight: bolder;
+    border: none;
+    background-color: #FF9500;
+    width: 125px;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px 10px;
+    display: inline-block; 
+    text-align: center;
+}
+
+.kategori {
+    text-align: center;
+    padding: 40px;
+    margin: 0 auto; 
+}
+
+.kategori h2{
+    color: #FF9500;
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+
+.kategori-section1 {
+    display: flex;
+    margin-left: 80px;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    padding: 20px;
+    text-decoration: none; 
+}
+
+.kategori-section2 {
+    display: flex;
+    margin-left: 100px;
+    justify-content: space-between; 
+    align-items: center; 
+    text-align: center;
+    padding: 1px;
+    text-decoration: none; 
+}
+
+.kategori-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.kategori-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+    font-size: 24px;
+    width: 400px;
+    height: 130px;
+    background: #fff;
+    border: 4px solid #FF8A00;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-align: center;
+}
+
+.kategori-box:hover {
+    transform: scale(1.05);
+    border-color: #00C2FF;
+}
+
+.kategori-box img.icon {
+    width: 30px; 
+    height: 30px;
+}
+
+.faq-section {
+    padding: 40px;
+    background: linear-gradient(to right, #e1f5fe, #ffffff);
+    margin-top: 80px;
+    padding-bottom: 300px;
+}
+
+.faq-title {
+    margin-left: 80px;
+    color: #FF9500;
+    font-size: 45px;
+    font-weight: bold;
+    text-shadow: 1px 1px #000000;
+}
+
+.faq-question {
+    margin-left: 80px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #818080;
+    padding-bottom: 10px;
+}
+
+.footer {
+    padding: 40px 0;
+    color: #ffffff;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #FF8C00;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bolder;
+    color: #ffff;
+}
+
+.brand-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #ffff;
+}
+
+.footer-section h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color: #ffff;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ffff    ;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FF8C00;
+}

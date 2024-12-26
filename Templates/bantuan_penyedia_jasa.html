@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/bantuan_penyedia_jasa.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="homepage">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="jasa">
+                <h2>JASA</h2>
+            </a>
+            <a href="">
+                <h2>TERAKHIR DILIHAT</h2>
+            </a>
+            <a href="" class="bantuan">
+                <h3>BANTUAN</h3>
+            </a>
+        </div>
+
+        <div class="profil">
+            <a href="" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <div class="kategori">
+        <h2 class="title">KATEGORI</h2>
+    </div>
+
+    <div class="kategori-section1">
+        <div class="kategori-container">
+            <div class="kategori-box">
+                <img src="{{ url_for('static', filename='/Images/bayar.png') }}" alt="Pembayaran" class="icon">
+                Pembayaran
+            </div>
+            <div class="kategori-box">
+                <img src="{{ url_for('static', filename='/Images/pesan.png') }}" alt="Pemesanan" class="icon">
+                Pemesanan
+            </div>
+                <div class="kategori-box">
+                <img src="{{ url_for('static', filename='/Images/info.png') }}" alt="Informasi Umum" class="icon">
+                Informasi Umum</div>
+            </div>
+    </div>
+
+    <div class="kategori-section2">
+        <div class="kategori-container">
+            <div class="kategori-box">
+                <img src="{{ url_for('static', filename='/Images/tawar.png') }}" alt="Penawaran" class="icon">
+                Penawaran
+            </div>
+            <div class="kategori-box">
+                <img src="{{ url_for('static', filename='/Images/jasa.png') }}" alt="Jasa" class="icon">
+                Jasa
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h1 class="faq-title">FAQ</h1>
+        <p class="faq-question">Bagaimana cara memperbarui nomor telepon saya?</>
+        <p class="faq-question">Tentang pemesanan dan pembatalan</p>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <div class="logo-circle"></div>
+                    <span class="brand-name">ConnectServes</span>
+                </div>
+                <p class="brand-description">
+                    ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                </p>
+                <div class="copyright">
+                    © ConnectServes2024
+                </div>
+            </div>
+
+            <!-- Perusahaan Section -->
+            <div class="footer-section">
+                <h3>Perusahaan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Panduan Layanan</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+            </div>
+
+            <!-- Kota Section -->
+            <div class="footer-section">
+                <h3>Kota</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                </ul>
+            </div>
+
+            <!-- Bantuan Section -->
+            <div class="footer-section">
+                <h3>Bantuan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Hubungi Admin</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body
