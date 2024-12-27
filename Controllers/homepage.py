@@ -30,15 +30,14 @@ def homepage():
             rows = cursor.fetchall()
             for row in rows:
                 service = {
-                    'id_jasa': int(row.get('id_jasa', 0)),
-                    'id_merch': int(row.get('id_merch', 0)),
+                    'id_jasa': int(row['id_jasa']) if row.get('id_jasa') is not None else 0,
                     'nama': row.get('nama', ''),
                     'kategori': row.get('kategori', ''),
-                    'harga': float(row.get('harga', 0.0)),
+                    'harga': float(row['harga']) if row.get('harga') is not None else 0.0,
                     'lokasi': row.get('lokasi', ''),
                     'foto_jasa': row.get('foto_jasa', ''),
                     'deskripsi': row.get('deskripsi', ''),
-                    'id_review': int(row.get('id_review', 0))
+                    'id_review': int(row['id_review']) if row.get('id_review') is not None else 0
                 }
                 services.append(service)
         except Error as e:

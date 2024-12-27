@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/tambahjasa_merch.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+        <div class="menu">
+            <a href="homepage-merchant"><h2>BERANDA</h2></a>
+            <a href="#"><h2>JASA</h2></a>
+            <a href="#"><h2>PESANAN</h2></a>
+            <a href="bantuan_penyedia_jasa"><h2>BANTUAN</h2></a>
+        </div>
+        <div class="daftar">
+            <a href="profil" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="page-title">Tambahkan Jasa</h1>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <form action="{{ url_for('tambahjasa_merch.tambahjasa_merch') }}" method="POST">
+            <div class="form-layout">
+                <!-- Form Left -->
+                <div class="form-left">
+                    <div class="service-form">
+                        <label class="form-label" for="service-name">Nama Jasa</label>
+                        <input type="text" id="service-name" name="nama" class="service-input" placeholder="Isi nama jasa kamu" aria-label="Nama jasa" required>
+                        
+                        <label class="price-label" for="price">Harga</label>
+                        <input type="number" id="price" name="harga" class="service-input" placeholder="Isi harga jasa" aria-label="Harga jasa" required>
+                        
+                        <label class="category-label" for="kategori">Kategori</label>
+                        <input type="text" id="kategori" name="kategori" class="service-input" placeholder="Isi kategori jasa" aria-label="Kategori jasa" required>
+                        
+                        <label class="category-label" for="location">Lokasi</label>
+                        <input type="text" id="location" name="lokasi" class="location-input" placeholder="Isi lokasi jasa" aria-label="Lokasi jasa" required>
+                        
+                        <label class="category-label" for="email">Email Penyedia Jasa</label>
+                        <input type="email" id="email" name="email_merch" class="service-input" placeholder="Isi email penyedia jasa" aria-label="Email penyedia jasa" required>
+                    </div>
+                </div>
+    
+                <!-- Form Right -->
+                <div class="form-right">
+                    <label for="service-description" class="form-label">Deskripsi</label>
+                    <div class="description-container">
+                        <textarea id="service-description" name="deskripsi" class="description-input" placeholder="Isi deskripsi jasa disini" aria-label="Deskripsi jasa" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Tambahkan</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <div class="logo-circle"></div>
+                    <span class="brand-name">ConnectServes</span>
+                </div>
+                <p class="brand-description">
+                    ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                </p>
+                <div class="copyright">
+                    © ConnectServes 2024
+                </div>
+            </div>
+
+            <!-- Perusahaan Section -->
+            <div class="footer-section">
+                <h3>Perusahaan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Panduan Layanan</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+            </div>
+
+            <!-- Kota Section -->
+            <div class="footer-section">
+                <h3>Kota</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                </ul>
+            </div>
+
+            <!-- Bantuan Section -->
+            <div class="footer-section">
+                <h3>Bantuan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Hubungi Admin</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

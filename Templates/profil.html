@@ -10,60 +10,122 @@
     <title>ConnectServes</title>
 </head>
 <body>
-<section class="profile-container">
-    <div class="content-wrapper">
-        <header class="header">
-            <div class="logo-container">
-                <div class="logo-icon" aria-hidden="true"></div>
-                <div class="logo-text">ConnectServes</div>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="homepage-merchant">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="">
+                <h2>JASA</h2>
+            </a>
+            <a href="detailpesanan_merch">
+                <h2>PESANAN</h2>
+            </a>
+            <a href="bantuan_penyedia_jasa">
+                <h2>BANTUAN</h2>
+            </a>
+        </div>
+
+        <div class="daftar">
+            <a href="profil" class="button">PROFIL</a>
+        </div>
+    </div>
+          
+          <h1 class="page-title">Verifikasi Data Diri</h1>
+          
+          <form class="form-container" action="{{ url_for('profil.profil') }}" method="POST">
+            <div class="form-section-header">
+                <img src="{{ url_for('static', filename='/Images/infoktp.png') }}" alt="Informasi KTP" width="35" height="32">
+                <div class="form-section-title">Informasi KTP</div>
             </div>
-            <nav class="nav-menu">
-                <a href="#" class="nav-link">BERANDA</a>
-                <a href="#" class="nav-link">JASA</a>
-                <a href="#" class="nav-link">PESANAN</a>
-                <a href="#" class="nav-link">BANTUAN</a>
-            </nav>
-            <div class="profile-button-container">
-                <button class="profile-button">PROFIL</button>
-                <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Profile icon" class="profile-icon" />
+            <div class="form-divider"></div>
+        
+            <div class="form-group">
+                <label for="owner-name" class="form-label">Nama Pemilik</label>
+                <input type="text" id="owner-name" name="owner_name" class="form-input" placeholder="Masukkan nama pemilik" aria-label="Nama Pemilik" required>
             </div>
-        </header>
-        <main class="main-content">
-            <div class="profile-info">
-                <div class="profile-image-column">
-                    <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Profile picture" class="profile-image" />
+        
+            <div class="form-group-nik">
+                <label for="nik" class="form-label-nik">NIK</label>
+                <input type="text" id="nik" name="nik" class="form-input-nik" placeholder="Masukkan NIK" aria-label="NIK" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Masukkan email" aria-label="Email" required>
+            </div>
+        
+            <div class="form-group">
+                <label for="location" class="form-label">Lokasi</label>
+                <input type="text" id="location" name="location" class="form-input" placeholder="Masukkan lokasi" aria-label="Lokasi" required>
+            </div>
+        
+            <div class="terms-agreement">
+                <div class="checkbox-container">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreement" name="agreement" required>
+                        <span>Saya menyetujui <a href="#" class="terms-link">Syarat & Ketentuan</a></span>
+                    </label>
                 </div>
-                <div class="profile-details-column">
-                    <div class="profile-details">
-                        <div class="profile-header">
-                            <div class="profile-title">
-                                <h1 class="profile-heading">Profil</h1>
-                                <label for="name-input" class="name-label">Nama</label>
-                            </div>
-                            <div class="verification-badge">Verifikasi Pedagang</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="submit" class="save-button">Simpan</button>
+            </div>
+        </form>
+        
+          
+          <footer class="footer">
+            <div class="footer-content">
+              <footer class="footer">
+                <div class="footer-container">
+                    <!-- Brand Section -->
+                    <div class="footer-brand">
+                        <div class="brand-logo">
+                            <div class="logo-circle"></div>
+                            <span class="brand-name">ConnectServes</span>
                         </div>
-                        <div class="name-input">
-                            <span class="name-text">Anna Kim</span>
-                            <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Edit name" class="edit-icon" />
+                        <p class="brand-description">
+                            ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                        </p>
+                        <div class="copyright">
+                            © ConnectServes2024
                         </div>
-                        <label for="phone-input" class="phone-label">No HP</label>
-                        <div class="phone-input">
-                            <span class="phone-text">08xxxxxxxxxx</span>
-                            <img src="{{ url_for('static', filename='images/beauty.png') }}" alt="Edit phone number" class="edit-icon" />
-                        </div>
-                        <label for="user-role-input" class="user-role-label">Peran Pengguna</label>
-                        <input type="text" id="user-role-input" class="user-role-input" value="Penyedia Jasa" readonly />
-                        <button class="save-button">Simpan</button>
+                    </div>
+        
+                    <!-- Perusahaan Section -->
+                    <div class="footer-section">
+                        <h3>Perusahaan</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Harga</a></li>
+                            <li><a href="#">Panduan Layanan</a></li>
+                            <li><a href="#">Apps</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Kota Section -->
+                    <div class="footer-section">
+                        <h3>Kota</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Jakarta</a></li>
+                            <li><a href="#">Bandung</a></li>
+                            <li><a href="#">Bali</a></li>
+                            <li><a href="#">Yogyakarta</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Bantuan Section -->
+                    <div class="footer-section">
+                        <h3>Bantuan</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Pusat Bantuan</a></li>
+                            <li><a href="#">Hubungi Admin</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Syarat & Ketentuan</a></li>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </main>
-        <footer class="footer">
-            <div class="footer-content">
-                <!-- Footer content goes here -->
-            </div>
-        </footer>
-    </div>
-</section>
-    </body>
-    </html>
+            </footer>
+        </body>
+        </html>

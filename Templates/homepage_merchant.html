@@ -1,52 +1,213 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/homepage_customer.css') }}">
-    <title>ConnectServes</title>
-</head>
-<body>
-    <div class="header">
-        <h2 class="logo">ConnectServes</h2>
-
-        <div class="menu">
-            <a href="profil">
-                <h2>BERANDA</h2>
-            </a>
-            <a href="">
-                <h2>JASA</h2>
-            </a>
-            <a href="">
-                <h2>PESANAN</h2>
-            </a>
-            <a href="">
-                <h2>BANTUAN</h2>
-            </a>
+<html>
+    <head>
+        <title>ConnectServe - Penyedia Jasa</title>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+            charset="UTF-8"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/homepage_merchant.css') }}">
+    </head>
+    <body>
+        <!--Header-->
+        <div class="header">
+            <div class="logo">
+                <div class="bentuk-logo"></div>
+                <span class="nama-logo">ConnectServes</span>
+            </div>
+            <div class="menu">
+                <a href="homepage-merchant">
+                    <h5 class="bold">BERANDA</h5>
+                </a>
+                <a href="jasaSaya">
+                    <h5>JASA</h5>
+                </a>
+                <a href="detailpesanan_merch">
+                    <h5>PESANAN</h5>
+                </a>
+                <a href="bantuan_penyedia_jasa">
+                    <h5>BANTUAN</h5>
+                </a>
+            </div>
+            <div class="keluar">
+                <a href="{{ url_for('keluar.keluar') }}" class="tombol-keluar">KELUAR</a>
+                <a class="profil" href="profil">PROFIL</a>
+            </div>
         </div>
 
-        <div class="daftar">
-            <a href="{{ url_for('keluar.keluar') }}" class="daftar-tombol">KELUAR</a>
-            <a href="profil" class="button">PROFIL</a>
+        <!--welcome-->
+        <div class="card1">
+            <div class="text-container">
+                <h2>Halo!</h2>
+                <h1>Pasarkan Jasamu<br>dengan Satu Klik!</h1>
+                <a href="tambahjasa_merch" class="button">Tambahkan Jasa</a>
+            </div>
+            <img src="{{ url_for('static', filename='/Images/gambarpenyediajasa.png') }}">
         </div>
-    </div>
 
-    <div class="card1">
-        <div class="text-container">
-            <h2>Halo! Selamat Datang</h2>
-            <h1>Satu Klik, <br> Semua Jasa di Sini</h1>
-            <p><strong>ConnectServe</strong> memudahkan Anda menemukan jasa terbaik <br> untuk setiap kebutuhan. Dari perbaikan rumah hingga layanan <br> profesional, semua tersedia dalam satu platform.</p>
-            <a href="" class="button">Pesan Jasa</a>
-        </div>
-        <img src="{{ url_for('static', filename='/Images/illustration1.png') }}" class="card1img1">
-    </div>
+        <!--status-->
+        <section class="card2-bg">
+            <img src="{{ url_for('static', filename='Images/bg-abstak.png') }}"/>
+            <div class="status">
+                <h1>Status Pesanan</h1>
+                <div class="status-container">
+                    <div class="container">
+                        <h1>1</h1>
+                        <h2>Pesanan Baru</h2>
+                    </div>
+                    <div class="container">
+                        <h1>2</h1>
+                        <h2>Sedang Proses</h2>
+                    </div>
+                    <div class="container">
+                        <h1>3</h1>
+                        <h2>Selesai</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--pesanan-->
+        <section class="card3">
+            <h1>Pesanan</h1>
+            <h4>Jasa Terpercaya, Pelanggan Melimpah</h4>
+            <div class="pesanan-c">
+                <div class="pesanan-container">
+                    <div class="p-container">
+                        <div class="content-section">
+                            <div class="nama">
+                                <img src="{{ url_for('static', filename='/Images/house.png') }}"/>
+                                <h3>Nama Jasa</h3>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="detail">
+                                <img src="{{ url_for('static', filename='/Images/distance.png') }}"/>
+                                <h5>Lokasi Jasa</h5>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="detail">
+                                <img src="{{ url_for('static', filename='/Images/inventory_2.png') }}"/>
+                                <h5>paket Jasa</h5>
+                            </div>
+                        </div>
+                        <div class="content-section">
+                            <div class="detail">
+                                <img src="{{ url_for('static', filename='/Images/add_card.png') }}"/>
+                                <h5>pembayaran</h5>
+                            </div>
+                        </div>
+                        <h5>Deskripsi pesanan</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="pesanan" href="pesanan">Pesanan Lainnya</a>
+        </section>
+
+        <!--jasa-->
+        <section class="card4">
+            <img src="{{ url_for('static', filename='Images/bg-abstrak.png') }}"/>
+            <h1>Jasa Anda</h1>
+            <h4>Jasa Terbaik untuk Setiap Kebutuhan</h4>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3 class="service-title">nama jasa</h3>
+                        <div class="service-price">harga jasa</div>
+                        <div class="service-location">lokasi jasa</div>
+                        <div class="service-description">deskripsi jasa</div>
+                        <div class="star-rating">
+                            ★
+                        </div>
+                        <div class="service-features">
+                            <div class="feature">
+                                <img src="{{ url_for('static', filename='/Images/location.png') }}" alt="Location">
+                                <span>Location</span>
+                            </div>
+                            <div class="feature">
+                                <img src="{{ url_for('static', filename='Images/souvenir.png') }}" alt="Souvenir">
+                                <span>Souvenir</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="jasa-lain" href="jasaSaya">Jasa Lainnya</a>
+        </section>
+
+        <!--ad-->
+        <section class="ad">
+            <div class="text-ad">
+                <h1>
+                    Bangun Reputasi,
+                    <br>
+                    Kembangkan Bisnis
+                </h1>
+            </div>
+            <div class="img-ad">
+                <div class="img-bg"></div>
+                <img src="{{ url_for('static', filename='Images/ad.png') }}">
+            </div>
+        </section>
+
+        <!--footer-->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-circle"></div>
+                        <span class="brand-name">ConnectServes</span>
+                    </div>
+                    <p class="brand-description">
+                        ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                    </p>
+                    <div class="copyright">
+                        © ConnectServes2024
+                    </div>
+                </div>
     
-    <div class="card2">
-        <h2>Layanan Kami</h2>
-        <h3>Layanan Terbaik untuk Setiap Kebutuhan Anda</h3>
-    </div>
-</body>
+                <!-- Perusahaan Section -->
+                <div class="footer-section">
+                    <h3>Perusahaan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Harga</a></li>
+                        <li><a href="#">Panduan Layanan</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Kota Section -->
+                <div class="footer-section">
+                    <h3>Kota</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Jakarta</a></li>
+                        <li><a href="#">Bandung</a></li>
+                        <li><a href="#">Bali</a></li>
+                        <li><a href="#">Yogyakarta</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Bantuan Section -->
+                <div class="footer-section">
+                    <h3>Bantuan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Hubungi Admin</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
 </html>

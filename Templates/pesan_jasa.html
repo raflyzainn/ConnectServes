@@ -14,7 +14,7 @@
         <h2 class="logo">ConnectServes</h2>
 
         <div class="menu">
-            <a href="homepage">
+            <a href="homepage-customer">
                 <h2>BERANDA</h2>
             </a>
             <a href="">
@@ -38,12 +38,10 @@
     </div>
     
     <div class="service-list">
-        <h2>Daftar Jasa</h2>
         <div class="services-grid">
             {% if service %}
             <div class="service-detail">
                 <h2 class="service-title">{{ service.nama }}</h2>
-                <img src="{{ service.foto_jasa | default(url_for('static', filename='Images/default.png')) }}" alt="{{ service.nama }}" class="service-image">
                 <p class="service-category">Kategori: {{ service.kategori }}</p>
                 <p class="service-price">Harga: Rp {{ '{:,.0f}'.format(service.harga) }}</p>
                 <p class="service-location">Lokasi: {{ service.lokasi }}</p>

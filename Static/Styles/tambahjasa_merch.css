@@ -1,0 +1,520 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Outfit', sans-serif;
+    background-image: linear-gradient(to bottom right, #4A90E2, #ffff);
+    background-repeat: no-repeat;
+  }
+  
+  
+  .header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px;
+  }
+  
+  .logo {
+    margin-left: 100px;
+    color: #ffff;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .menu h2 {
+    color: #ffff;
+    display: inline-block; 
+    margin-left: 30px; 
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  .on {
+    font-weight: bolder;
+  }
+  
+  .daftar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  
+  .daftar h2 {
+    margin: 15px; 
+    color: #ffff;
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  .daftar a {
+    text-decoration: none; 
+  }
+  
+  .daftar .button {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 15px;
+    color: #ffff;
+    font-weight: bolder;
+    border: none;
+    background-color: #FF9500;
+    width: 125px;
+    font-size: 16px;
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 10px 10px;
+    display: inline-block; 
+    text-align: center;
+  }
+  
+  .page-title {
+    color: #FF9500;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    align-self: center;
+    margin-top: 65px;
+    font: 600 52px Outfit, sans-serif;
+  }
+
+  .form-container {
+    margin-left: 300px;
+    margin-top: -50px;
+    width: 100%;
+    max-width: 1100px;
+  }
+  
+  .form-layout {
+    gap: 20px;
+    display: flex;
+    gap: 30px; /* Space between forms */
+    padding: 20px; /* Space around the container */
+  }
+  
+  .form-left {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 0;
+  }
+  
+  .service-form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .service-input {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    color: rgba(0, 0, 0, 0.45);
+    padding: 18px 13px;
+    font: 300 12px Outfit, sans-serif;
+    border: 1px solid #f5f5f5;
+  }
+  
+  .category-label {
+    color: #000;
+    align-self: start;
+    margin-top: 22px;
+    font: 400 16px Outfit, sans-serif;
+  }
+  
+  .category-select {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 4px;
+    align-items: start;
+    gap: 20px;
+    color: rgba(0, 0, 0, 0.45);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 7px 14px 17px;
+    font: 300 12px Outfit, sans-serif;
+    border: 1px solid #f5f5f5;
+  }
+  
+  .select-text {
+    margin-top: 11px;
+  }
+  
+  .select-icon {
+    aspect-ratio: 1;
+    object-fit: contain;
+    object-position: center;
+    width: 24px;
+  }
+  
+  .price-label {
+    color: #000;
+    align-self: start;
+    margin-top: 22px;
+    font: 400 16px Outfit, sans-serif;
+  }
+  
+  .location-input {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 4px;
+    gap: 20px;
+    color: rgba(0, 0, 0, 0.45);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 13px 14px;
+    font: 300 12px Outfit, sans-serif;
+    border: 1px solid #f5f5f5;
+  }
+  
+  .location-text {
+    margin: auto 0;
+  }
+
+  .extlink-input {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 4px;
+    gap: 20px;
+    color: rgba(0, 0, 0, 0.45);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 13px 14px;
+    font: 300 12px Outfit, sans-serif;
+    border: 1px solid #f5f5f5;
+  }
+  
+  .extlink-text {
+    margin: auto 0;
+  }
+
+  .extlink2-input {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    margin-top: 4px;
+    gap: 20px;
+    color: rgba(0, 0, 0, 0.45);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 13px 14px;
+    font: 300 12px Outfit, sans-serif;
+    border: 1px solid #f5f5f5;
+  }
+  
+  .extlink2-text {
+    margin: auto 0;
+  }
+  
+  .form-right {
+    display: flex;
+    flex-direction: column;
+    line-height: normal;
+    width: 50%;
+    margin-left: 20px;
+  }
+
+  .form-label {
+    display: flex;
+    margin-top: 65px;
+    width: 665px;
+    max-width: 100%;
+    gap: 20px;
+    color: #000;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font: 400 16px Outfit, sans-serif;
+  }
+
+  .description-container {
+    display: flex;
+    flex-direction: column;
+    font: 400 16px Outfit, sans-serif;
+  }
+  
+  .description-input {
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.45);
+    font-weight: 300;
+    padding: 18px 13px 244px;
+    border: 1px solid #f5f5f5;
+    font: 400 16px Outfit, sans-serif;
+  }
+  
+  .submit-btn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 15px;
+    color: #ffff;
+    border: none;
+    background-color: #FF9500;
+    width: 125px;
+    font-size: 16px;
+    padding: 10px 10px;
+    display: inline-block; 
+    text-align: center;
+    align-self: center;
+    margin-top: 34px;
+    width: 420px;
+    max-width: 100%;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 23px 70px;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
+  
+  @media (max-width: 991px) {
+    .service-container {
+      padding: 0 20px 100px;
+    }
+    
+    .service-wrapper {
+      max-width: 100%;
+    }
+    
+    .header-nav {
+      max-width: 100%;
+      white-space: initial;
+    }
+    
+    .brand-container {
+      white-space: initial;
+    }
+    
+    .nav-links {
+      white-space: initial;
+    }
+    
+    .profile-btn {
+      white-space: initial;
+      padding: 0 20px;
+    }
+    
+    .page-title {
+      margin-top: 40px;
+      font-size: 40px;
+    }
+    
+    .form-labels {
+      margin-top: 40px;
+    }
+    
+    .form-layout {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    
+    .form-left {
+      width: 100%;
+    }
+    
+    .service-form {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+    
+    .service-input {
+      max-width: 100%;
+      padding-right: 20px;
+    }
+    
+    .category-select {
+      max-width: 100%;
+    }
+    
+    .location-input {
+      max-width: 100%;
+    }
+    
+    .photo-grid {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    
+    .photo-box {
+      margin-top: 32px;
+    }
+
+    .content-box {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: #ffffff; /* Warna putih */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+    
+    .form-right {
+      width: 100%;
+    }
+    
+    .description-container {
+      max-width: 100%;
+      margin-top: 40px;
+    }
+    
+    .description-input {
+      max-width: 100%;
+      padding: 0 20px 110px 0;
+    }
+    
+    .submit-btn {
+      margin-top: 40px;
+      white-space: initial;
+      padding: 0 20px;
+    }
+    .form-layout {
+  display: flex; /* Gunakan flexbox */
+  gap: 20px; /* Jarak antar elemen */
+  align-items: flex-start; /* Sejajarkan ke atas */
+}
+
+.form-left, .form-right {
+  flex: 1; /* Membagi ruang secara proporsional */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Jarak antar elemen dalam kolom */
+}
+
+.description-input {
+  height: 200px; /* Sesuaikan tinggi input */
+  resize: vertical; /* Input bisa diubah ukurannya */
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Tombol diatur ke kanan */
+  margin-top: 20px; /* Jarak dengan form */
+}
+
+.submit-btn {
+  background-color: #FF9500;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+}
+
+.footer {
+    padding: 40px 0;
+    color: #ffffff;
+    margin-top: 100px;
+    margin-bottom: 150px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #FF8C00;
+    border-radius: 50%;
+}
+
+.brand-name {
+    font-size: 24px;
+    font-weight: bolder;
+    color: #ffff;
+}
+
+.brand-description {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.copyright {
+    font-size: 12px;
+    color: #ffff;
+}
+
+.footer-section h3 {
+    font-size: 25px;
+    font-weight: bolder;
+    margin-bottom: 20px;
+    color: #ffff;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ffff    ;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FF8C00;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}

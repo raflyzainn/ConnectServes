@@ -39,24 +39,22 @@
 
     <div class="deskripsi">
         <h1>Deskripsi & Fasilitas</h1>
-        <div class="deskripsi-isi">{{ service.deskripsi }}</div>
+        <div class="deskripsi-isi">{{ service['deskripsi'] }}</div>
     </div>
 
     <div class="detail-jasa">
         <div class="text-container">
-            <h1>{{ service.nama }}</h1>
-            <p>{{ service.kategori }}</p>
-            <p>{{ service.lokasi }}</p>
+            <h1>{{ service['nama'] }}</h1>
+            <p>{{ service['kategori'] }}</p>
+            <p>{{ service['lokasi'] }}</p>
         </div>
     </div>
 
     <div class="total-harga">
-        <p>Total Harga: {{ service.harga }}</p>
+        <p>Total Harga: Rp {{ '{:,.0f}'.format(service['harga']) }}</p>
     </div>
 
-   
-
-    <a class="box-pesan" href="{{ url_for('pesan_jasa.pesan_jasa', id_jasa=service.id_jasa) }}">PESAN</a>
+    <a class="box-pesan" href="{{ url_for('pesan_jasa.pesan_jasa', id_jasa=service['id_jasa']) }}">PESAN</a>
 
     <footer class="footer">
         <div class="footer-container">

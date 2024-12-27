@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/bayar_pesanan_berhasil.css') }}">
+    <style>
+       
+    </style>
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="homepage">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="">
+                <h2>JASA</h2>
+            </a>
+            <a href="">
+                <h2>TERAKHIR DILIHAT</h2>
+            </a>
+            <a href="" class="bantuan">
+                <h3>BANTUAN</h3>
+            </a>
+        </div>
+
+        <div class="profil">
+            <a href="" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <main>
+        <h2 class="page-title">Pembayaran</h2>
+        
+        <section class="order-summary">
+            <div class="total-label">Total Pesanan:</div>
+            <div class="total-amount-wrapper">
+            <div class="total-amount">Rp. 35.000.000</div>
+            </div>
+        </section>
+
+        <section class="order-details">
+            <h3 class="order-label">Detail Pesanan</h3>
+            <p class="order-date">Dipesan pada: <span id="order-date"></span></p>
+        </section>
+
+        <section class="payment-timer">
+            <div class="timer-label">Bayar dalam</div>
+            <div class="timer-wrapper">
+            <div class="countdown" id="countdown">10:00</div>
+            <div class="due-date" id="due-date">Jatuh tempo</div>
+            </div>
+        </section>
+
+        <div class="qr-code-wrapper">
+            <img src="{{ url_for('static', filename='Images/qr.jpg') }}" alt="QR Code" class="qr-code">
+        </div>
+
+        <section class="account-details">
+            <h3 class="account-label">Instruksi Pembayaran</h3>
+            <p class="processing-time">Dicek dalam 10 menit setelah pembayaran berhasil</p>
+            <p class="important-note">Penting: Pastikan kamu melakukan pembayaran dengan memindai kode QR di atas.</p>
+            <p class="bank-note">Hanya menerima pembayaran melalui metode QRIS</p>
+        </section>
+        <a href="{{ url_for('bayar_pesanan_berhasil.bayar_pesanan_berhasil') }}" class="check-payment-btn">Cek Pembayaran</a>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Brand Section -->
+            <div class="footer-brand">
+                <div class="brand-logo">
+                    <div class="logo-circle"></div>
+                    <span class="brand-name">ConnectServes</span>
+                </div>
+                <p class="brand-description">
+                    ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                </p>
+                <div class="copyright">
+                    © ConnectServes2024
+                </div>
+            </div>
+
+            <!-- Perusahaan Section -->
+            <div class="footer-section">
+                <h3>Perusahaan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Tentang Kami</a></li>
+                    <li><a href="#">Harga</a></li>
+                    <li><a href="#">Panduan Layanan</a></li>
+                    <li><a href="#">Apps</a></li>
+                </ul>
+            </div>
+
+            <!-- Kota Section -->
+            <div class="footer-section">
+                <h3>Kota</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Jakarta</a></li>
+                    <li><a href="#">Bandung</a></li>
+                    <li><a href="#">Bali</a></li>
+                    <li><a href="#">Yogyakarta</a></li>
+                </ul>
+            </div>
+
+            <!-- Bantuan Section -->
+            <div class="footer-section">
+                <h3>Bantuan</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Hubungi Admin</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function startCountdown(orderDate) {
+            var countdown = document.getElementById("countdown");
+            var dueDate = document.getElementById("due-date");
+            var duration = 600; // 10 minutes in seconds
+            var timer = duration, minutes, seconds;
+            var countdownInterval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                countdown.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(countdownInterval);
+                    countdown.textContent = "Waktu habis!";
+                    // Redirect to payment failed page or show error message
+                }
+            }, 1000);
+
+            // Format due date
+            var dueDate = new Date(orderDate.getTime() + duration * 1000);
+            dueDate = dueDate.toLocaleString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+                hour: "numeric",
+                minute: "numeric"
+            });
+            this.dueDate.textContent = "Jatuh tempo " + dueDate;
+
+            // Set order date
+            var orderDateElement = document.getElementById("order-date");
+            orderDateElement.textContent = orderDate.toLocaleString("id-ID", {
+                day: "numeric",
+                month: "long",
+                year: "numeric"
+            });
+        }
+
+        // Example usage: 10 minutes countdown from current time
+        startCountdown(new Date());
+    </script>
+    <!-- Success Modal -->
+    <div class="modal-overlay">
+        <div class="modal-content">
+            <div class="success-icon">
+                <div class="checkmark">✓</div>
+            </div>
+            <h2 class="modal-title">Pembayaran Berhasil</h2>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+          window.location.href = "{{ url_for('homepage_customer.homepage_customer') }}";
+        }, 4000); // Redirect setelah 3 detik (3000 milliseconds)
+      </script> 
+</body>
+</html>

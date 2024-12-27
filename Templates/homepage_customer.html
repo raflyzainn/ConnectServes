@@ -48,7 +48,7 @@
         <h2>Temukan Jasa</h2>
         <p>Temukan dan hubungkan dengan penyedia jasa terpecaya di berbagai bidang.</p>
         <p>ConnectServe menawarkan solusi cepat dan mudah untuk setiap kebutuhan anda</p>
-
+    
         <div class="search-container">
             <div class="search-bar">
                 <div class="search-input-wrapper">
@@ -59,16 +59,18 @@
                     <input type="text" class="search-input" placeholder="Cari layanan yang Anda butuhkan">
                 </div>
     
+                <!-- Dropdown for Category -->
                 <div class="dropdown-wrapper" onclick="toggleDropdown('categoryDropdown')">
                     <span>Kategori</span>
                     <i class="chevron-down"></i>
                     <div id="categoryDropdown" class="dropdown-content">
-                        <a href="#">Kategori 1</a>
-                        <a href="#">Kategori 2</a>
-                        <a href="#">Kategori 3</a>
+                        {% for category in categories %}
+                            <a href="#">{{ category }}</a>
+                        {% endfor %}
                     </div>
                 </div>
     
+                <!-- Dropdown for Location -->
                 <div class="dropdown-wrapper" onclick="toggleDropdown('locationDropdown')">
                     <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
@@ -77,18 +79,19 @@
                     <span>Lokasi</span>
                     <i class="chevron-down"></i>
                     <div id="locationDropdown" class="dropdown-content">
-                        <a href="#">Jakarta</a>
-                        <a href="#">Surabaya</a>
-                        <a href="#">Bandung</a>
+                        {% for location in locations %}
+                            <a href="#">{{ location }}</a>
+                        {% endfor %}
                     </div>
                 </div>
     
                 <button class="search-button">CARI</button>
             </div>
         </div>
-
+    
         <img src="{{ url_for('static', filename='/Images/illustration2.png') }}" class="card3img1">
     </div>
+    
 
     <div class="card4">
         <section class="rekomendasi-section">
@@ -188,4 +191,25 @@
         </div>
     </footer>
 </body>
+<script>
+    // Fungsi untuk toggle (menampilkan dan menyembunyikan) dropdown
+    function toggleDropdown(id) {
+        var dropdown = document.getElementById(id);
+        dropdown.classList.toggle('show');
+    }
+
+    // Menutup dropdown ketika user mengklik di luar dropdown
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropdown-wrapper, .dropdown-wrapper *')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
 </html>

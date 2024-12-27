@@ -8,20 +8,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/bantuan_penyedia_jasa.css') }}">
     <title>ConnectServes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: #333;
+            margin-left: 10px;
+            transition: transform 0.3s;
+        }
+
+        .faq-question.active::after {
+            content: '-';
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            font-size: 1rem;
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .faq-answer.open {
+            max-height: 500px;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
         <h2 class="logo">ConnectServes</h2>
 
         <div class="menu">
-            <a href="homepage">
+            <a href="homepage-merchant">
                 <h2>BERANDA</h2>
             </a>
             <a href="jasa">
                 <h2>JASA</h2>
             </a>
-            <a href="">
-                <h2>TERAKHIR DILIHAT</h2>
+            <a href="detailpesanan_merch">
+                <h2>PESANAN</h2>
             </a>
             <a href="" class="bantuan">
                 <h3>BANTUAN</h3>
@@ -40,15 +104,15 @@
     <div class="kategori-section1">
         <div class="kategori-container">
             <div class="kategori-box">
-                <img src="{{ url_for('static', filename='/Images/bayar.png') }}" alt="Pembayaran" class="icon">
+                <img src="{{ url_for('static', filename='/Images/Credit card.png') }}" alt="Pembayaran" class="icon">
                 Pembayaran
             </div>
             <div class="kategori-box">
-                <img src="{{ url_for('static', filename='/Images/pesan.png') }}" alt="Pemesanan" class="icon">
+                <img src="{{ url_for('static', filename='/Images/Shopping cart.png') }}" alt="Pemesanan" class="icon">
                 Pemesanan
             </div>
                 <div class="kategori-box">
-                <img src="{{ url_for('static', filename='/Images/info.png') }}" alt="Informasi Umum" class="icon">
+                <img src="{{ url_for('static', filename='/Images/File text.png') }}" alt="Informasi Umum" class="icon">
                 Informasi Umum</div>
             </div>
     </div>
@@ -56,11 +120,11 @@
     <div class="kategori-section2">
         <div class="kategori-container">
             <div class="kategori-box">
-                <img src="{{ url_for('static', filename='/Images/tawar.png') }}" alt="Penawaran" class="icon">
+                <img src="{{ url_for('static', filename='/Images/Tag.png') }}" alt="Penawaran" class="icon">
                 Penawaran
             </div>
             <div class="kategori-box">
-                <img src="{{ url_for('static', filename='/Images/jasa.png') }}" alt="Jasa" class="icon">
+                <img src="{{ url_for('static', filename='/Images/Users.png') }}" alt="Jasa" class="icon">
                 Jasa
             </div>
         </div>
@@ -68,8 +132,41 @@
 
     <div class="faq-section">
         <h1 class="faq-title">FAQ</h1>
-        <p class="faq-question">Bagaimana cara memperbarui nomor telepon saya?</>
-        <p class="faq-question">Tentang pemesanan dan pembatalan</p>
+    
+        <div class="faq-item">
+            <p class="faq-question">Bagaimana cara memperbarui nomor telepon saya?</p>
+            <div class="faq-answer">
+                Anda dapat memperbarui nomor telepon Anda melalui menu pengaturan di profil akun Anda.
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Tentang pemesanan dan pembatalan</p>
+            <div class="faq-answer">
+                Anda dapat membatalkan pemesanan maksimal 24 jam sebelum waktu layanan. Setelah itu, pembatalan tidak diperbolehkan.
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Apa metode pembayaran yang tersedia?</p>
+            <div class="faq-answer">
+                Kami menerima pembayaran melalui transfer bank, kartu kredit, dompet digital, dan QRIS.
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Bagaimana cara menghubungi layanan pelanggan?</p>
+            <div class="faq-answer">
+                Anda dapat menghubungi layanan pelanggan kami melalui email support@example.com atau melalui live chat di aplikasi kami.
+            </div>
+        </div>
+    
+        <div class="faq-item">
+            <p class="faq-question">Apakah saya bisa mengubah jadwal pemesanan?</p>
+            <div class="faq-answer">
+                Ya, Anda dapat mengubah jadwal pemesanan melalui halaman pemesanan Anda, asalkan perubahan dilakukan minimal 12 jam sebelumnya.
+            </div>
+        </div>
     </div>
 
     <footer class="footer">
@@ -122,4 +219,17 @@
             </div>
         </div>
     </footer>
-</body
+
+    <script>
+        // JavaScript untuk toggle FAQ
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                question.classList.toggle('active');
+                answer.classList.toggle('open');
+            });
+        });
+    </script>
+</body>

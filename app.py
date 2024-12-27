@@ -14,6 +14,12 @@ from Controllers.detail_jasa import detail_jasa_bp
 from Controllers.pesan_jasa import pesan_jasa_bp
 from Controllers.konfirmasi_pesan import konfirmasi_pesan_bp
 from Controllers.berhasil_pesan import berhasil_pesan_bp
+from Controllers.bayar_pesanan import bayar_pesanan_bp
+from Controllers.bayar_pesanan_berhasil import bayar_pesanan_berhasil_bp
+from Controllers.bayar_pesanan_gagal import bayar_pesanan_gagal_bp
+from Controllers.tambah_jasa import tambahjasa_merch_bp
+from Controllers.bantuan_penyedia_jasa import bantuan_penyedia_jasa_bp
+from Controllers.detailpesanan_merch import detailpesanan_merch_bp
 
 # Initialize Flask app
 app = Flask(__name__, template_folder='Templates', static_folder='Static')
@@ -38,6 +44,12 @@ app.register_blueprint(detail_jasa_bp)
 app.register_blueprint(pesan_jasa_bp)
 app.register_blueprint(konfirmasi_pesan_bp)
 app.register_blueprint(berhasil_pesan_bp)
+app.register_blueprint(bayar_pesanan_bp)
+app.register_blueprint(bayar_pesanan_berhasil_bp)
+app.register_blueprint(bayar_pesanan_gagal_bp)
+app.register_blueprint(tambahjasa_merch_bp)
+app.register_blueprint(bantuan_penyedia_jasa_bp)
+app.register_blueprint(detailpesanan_merch_bp)
 
 if __name__ == '__main__':
     app.run(debug=True)

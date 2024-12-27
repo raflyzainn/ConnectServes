@@ -152,6 +152,8 @@ body {
     text-shadow: 1px 1px #000000;
 }
 
+
+
 .card3 h2 {
     text-align: center;
     color: #FF9500;
@@ -470,4 +472,51 @@ body {
     .footer-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Style untuk dropdown */
+.dropdown-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.dropdown-wrapper span {
+    font-size: 16px;
+    color: #333;
+}
+
+.chevron-down {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: white;
+    position: absolute;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Tampilkan dropdown ketika di-click */
+.show {
+    display: block;
 }

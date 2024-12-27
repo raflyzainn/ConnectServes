@@ -17,21 +17,23 @@ def get_database_connection():
         print(f"Error connecting to MySQL: {e}")
         return None
 
-
 @homepage_customer_bp.route('/homepage-customer')
 def homepage_customer():
     connection = get_database_connection()
     services = []
+    categories = set()  # Untuk menampung kategori unik
+    locations = set()  # Untuk menampung lokasi unik
     
     if connection:
         try:
             cursor = connection.cursor(dictionary=True)
             cursor.execute("SELECT * FROM daftarjasa_merch")
             rows = cursor.fetchall()
+
             for row in rows:
+                # Menambahkan jasa ke dalam list
                 service = {
                     'id_jasa': int(row.get('id_jasa', 0)),
-                    'id_merch': int(row.get('id_merch', 0)),
                     'nama': row.get('nama', ''),
                     'kategori': row.get('kategori', ''),
                     'harga': float(row.get('harga', 0.0)),
@@ -41,11 +43,16 @@ def homepage_customer():
                     'id_review': int(row.get('id_review', 0))
                 }
                 services.append(service)
+
+                # Menambahkan kategori dan lokasi unik
+                categories.add(row.get('kategori', ''))
+                locations.add(row.get('lokasi', ''))
+        
         except Error as e:
             print(f"Error: {e}")
         finally:
             if connection.is_connected():
                 cursor.close()
                 connection.close()
-    
-    return render_template("homepage_customer.html", services=services)
+
+    return render_template("homepage_customer.html", services=services, categories=categories, locations=locations)

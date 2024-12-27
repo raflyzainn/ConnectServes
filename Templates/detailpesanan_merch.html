@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Styles/detailpesanan_merch.css') }}">
+    <title>ConnectServes</title>
+</head>
+<body>
+    <div class="header">
+        <h2 class="logo">ConnectServes</h2>
+
+        <div class="menu">
+            <a href="homepage-merchant">
+                <h2>BERANDA</h2>
+            </a>
+            <a href="">
+                <h2>JASA</h2>
+            </a>
+            <a href="detailpesanan_merch">
+                <h2>PESANAN</h2>
+            </a>
+            <a href="bantuan_penyedia_jasa">
+                <h2>BANTUAN</h2>
+            </a>
+        </div>
+
+        <div class="daftar">
+            <a href="profil" class="button">PROFIL</a>
+        </div>
+    </div>
+
+    <h2 class="page-title">Detail Pesanan</h2>
+
+        <main class="main-content">
+            <div class="content-wrapper">
+                
+                <div class="vendor-header">
+                    <div class="vendor-logoo"></div>
+                    <img src="{{ url_for('static', filename='/Images/logo_bridestory.png') }}" alt="Vendor logo" class="vendor-logo" />
+                    <h3>Bride Story</h3>
+                </div>
+
+                <section class="order-details">
+                    <div class="details-container">
+                        <div class="vendor-info">
+                            <div class="info-grid">
+                                <img src="{{ url_for('static', filename='/Images/logomerch.png') }}" alt="Vendor Image" class="vendor-image" />
+                                <div class="vendor-details">
+                                    <h4 class="vendor-name">Extro Wedding Organizer</h4>
+                                    <p class="package-name">Paket Sakinah Mawaddah Warrahmah</p>
+                                    <div class="date-wrapper">
+                                        <img src="{{ url_for('static', filename='/Images/kalender.png') }}" alt="Calendar icon" class="calendar-icon" />
+                                        <p class= "vendor-time">22 - 23 November 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gallery">
+                                <div class="image">
+                                    <img src="{{ url_for('static', filename='/Images/fotodetailjasa1.png') }}" alt="Wedding Venue 1">
+                                </div>
+                                <div class="image">
+                                    <img src="{{ url_for('static', filename='/Images/fotodetailjasa2.png') }}" alt="Wedding Venue 2">
+                                </div>
+                                <div class="image">
+                                    <img src="{{ url_for('static', filename='/Images/fotodetailjasa3.png') }}" alt="Wedding Venue 3">
+                                </div>
+                                <div class="image">
+                                    <img src="{{ url_for('static', filename='/Images/fotodetailjasa4.png') }}" alt="Wedding Venue 4">
+                                </div>
+                            </div>
+                            <div class="h4">
+                                <h2>Rincian Pemesanan</h2>
+                            </div>
+                        </div>
+
+                        <article class="order-card">
+                            <span class="info-label">Konsep pernikahan saya adalah adat Jawa Solo dengan sentuhan modern. Jumlah tamu undangan sekitar 300 orang. Acara akan diadakan di Istana. Selain layanan standar, saya juga membutuhkan bantuan dalam menyusun rundown acara, memilih busana pengantin, dan mengatur tata rias. Saya memiliki permintaan khusus untuk dekorasi pelaminan, yaitu ingin menggunakan bunga-bunga segar dengan warna putih dan ungu.</span>
+                        </article>
+                        
+                        <article class="order-card">
+                            <div class="order-grid">
+                                <div class="order-info">
+                                    <span class="info-label">Dipesan oleh</span>
+                                    <span class="info-value">Koko Nam</span>
+                                </div>
+                                <div class="order-info">
+                                    <span class="info-label">Tanggal Pemesanan</span>
+                                    <time class="info-value">12 November 2024</time>
+                                </div>
+                                <div class="order-info">
+                                    <span class="info-label">No Pesanan</span>
+                                    <span class="info-value">43826749</span>
+                                </div>
+                            </div>
+
+                            <hr class="divider" />
+                            
+                            <h5 class="section-title">PEMBAYARAN</h5>
+                            <div class="payment-grid">
+                                <div class="order-info">
+                                    <span class="info-label">Jenis Pembayaran</span>
+                                    <span class="info-value">Transfer</span>
+                                </div>
+                                <div class="order-info">
+                                    <span class="info-label">Status Pembayaran</span>
+                                    <span class="status-paid">Lunas</span>
+                                </div>
+                            </div>
+
+                            <hr class="divider" />
+                            
+                            <h5 class="section-title">ALAMAT PEMESANAN</h5>
+                            <address>Jl. Sudirman Ahmad Yani No 24</address>
+                        </article>
+
+                        <hr class="white-divider" />
+                        
+                        <button type="submit" class="complete-btn">SELESAI</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+          <footer class="footer">
+            <div class="footer-container">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <div class="logo-circle"></div>
+                        <span class="brand-name">ConnectServes</span>
+                    </div>
+                    <p class="brand-description">
+                        ConnectServes menyediakan jasa yang memungkinkan pelanggan untuk mencari jasa yang diperlukan serta bagi para penyedia jasa untuk menjual jasa mereka di tempat yang lebih luas.
+                    </p>
+                    <div class="copyright">
+                        © ConnectServes2024
+                    </div>
+                </div>
+    
+                <!-- Perusahaan Section -->
+                <div class="footer-section">
+                    <h3>Perusahaan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Harga</a></li>
+                        <li><a href="#">Panduan Layanan</a></li>
+                        <li><a href="#">Apps</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Kota Section -->
+                <div class="footer-section">
+                    <h3>Kota</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Jakarta</a></li>
+                        <li><a href="#">Bandung</a></li>
+                        <li><a href="#">Bali</a></li>
+                        <li><a href="#">Yogyakarta</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Bantuan Section -->
+                <div class="footer-section">
+                    <h3>Bantuan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Pusat Bantuan</a></li>
+                        <li><a href="#">Hubungi Admin</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
